@@ -1,0 +1,149 @@
+/* -------------------- Font -------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* -------------------- Brand Colors -------------------- */
+:root{
+    --primary: #F2AF29;
+    --secondary: #26AB7A;
+    --black: #242424;
+    --light: #fefefe;
+}
+
+/* -------------------- Body -------------------- */
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light);
+    color: var(--black);
+    background-image: url(assets/mariveles/mariveles_hero_bg.png);
+}
+
+
+/* ----------------- Navbar ----------------- */
+.navbar{
+    padding: 3rem 0 0 0;
+}
+
+.navbar-brand img{
+    margin-top: 0.5rem;
+}
+
+/* ----------------- Title ----------------- */
+
+.updates{
+    padding: 8rem 0 5rem 0;
+}
+
+.text-header h2{
+    margin-top: 3rem;
+    font-size: 3rem;
+    font-weight: 600;
+    background: rgb(38,171,122);
+    background: linear-gradient(90deg, rgba(38,171,122,1) -50%, rgba(242,175,41,1) 120%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    
+}
+
+.text-header p{
+    font-size: 1.25rem;
+    font-weight: 400;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ----------------- Forms ----------------- */
+section.forms{
+    padding-top: 3rem;
+}
+
+.form{
+
+}
+
+.image{
+
+}
+
+/* ----------------- Image ----------------- */
+.image img{
+    margin-left: 2rem;
+}
+
+/* ----------------- Buttons ----------------- */
+
+.btn{
+    border-radius: 12px;
+    margin-top: 1rem;
+    font-size: 1.25rem;
+}
+
+
+.btn-primary{
+    background: rgb(38,171,122);
+    background: linear-gradient(90deg, rgba(38,171,122,1) -50%, rgba(242,175,41,1) 120%);
+    /* background-color: var(--primary); */
+    border: none;
+    color: var(--light);
+    padding: 0.45rem 1.5rem;
+    transition: all 0.5s ease;
+}
+
+.btn-primary:hover{
+    transform: scale(1.05);
+}
+
+/* ----------------- Media Queries ----------------- */
+
+@media (max-width: 991px) {
+   
+    .container .row{
+        display: flex;
+    }
+
+    .image{
+        order: -1;
+    }
+
+    .image img{
+        padding-bottom: 2rem;
+        margin-left: 0;
+    }
+    
+    .submit-btn {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+
+    section.title h2{
+        font-size: 2rem;
+    }
+
+    section.title p{
+        font-size: 1.15rem;
+        width: 500px;
+    }
+
+    .btn {
+        font-size: 1.25rem;
+    }
+
+}
+
+@media (max-width: 500px) {
+    section.title h2{
+        font-size: 1.5rem;
+    }
+
+    section.title p{
+        font-size: 0.95rem;
+        width: 300px;
+        margin-bottom: -1.5rem;
+    }
+
+   
+}
