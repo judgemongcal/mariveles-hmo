@@ -1,149 +1,205 @@
 /* -------------------- Font -------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 /* -------------------- Brand Colors -------------------- */
-:root{
-    --primary: #F2AF29;
-    --secondary: #26AB7A;
-    --black: #242424;
-    --light: #fefefe;
+:root {
+	--primary: #f2af29;
+	--secondary: #26ab7a;
+	--black: #242424;
+	--light: #fefefe;
 }
 
 /* -------------------- Body -------------------- */
-body{
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--light);
-    color: var(--black);
-    background-image: url(assets/mariveles/mariveles_hero_bg.png);
+body {
+	font-family: "Poppins", sans-serif;
+	background-color: var(--light);
+	color: var(--black);
+	background-image: url(assets/mariveles/mariveles_hero_bg.png);
 }
-
 
 /* ----------------- Navbar ----------------- */
-.navbar{
-    padding: 3rem 0 0 0;
+.navbar {
+	padding: 3rem 0 0 0;
 }
 
-.navbar-brand img{
-    margin-top: 0.5rem;
+.navbar-brand img {
+	margin-top: 0.5rem;
 }
 
 /* ----------------- Title ----------------- */
 
-.updates{
+/* .updates{
     padding: 8rem 0 5rem 0;
+} */
+
+.text-header h2 {
+	margin-top: 3rem;
+	font-size: 3rem;
+	font-weight: 600;
+	background: rgb(38, 171, 122);
+	background: linear-gradient(
+		90deg,
+		rgba(38, 171, 122, 1) -50%,
+		rgba(242, 175, 41, 1) 120%
+	);
+	-webkit-background-clip: text;
+	-moz-background-clip: text;
+	background-clip: text;
+	color: transparent;
 }
 
-.text-header h2{
-    margin-top: 3rem;
-    font-size: 3rem;
-    font-weight: 600;
-    background: rgb(38,171,122);
-    background: linear-gradient(90deg, rgba(38,171,122,1) -50%, rgba(242,175,41,1) 120%);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    
+.text-header p {
+	font-size: 1.25rem;
+	font-weight: 400;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
 }
-
-.text-header p{
-    font-size: 1.25rem;
-    font-weight: 400;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 
 /* ----------------- Forms ----------------- */
-section.forms{
-    padding-top: 3rem;
+
+.main-form {
+	display: flex;
+	gap: 20px;
+}
+.form-container {
+	width: 340px;
+	height: auto;
+	margin: 2rem auto;
+	background-color: #26ab7a;
+	border-radius: 10px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	/* justify-content: center; */
+	text-align: center;
 }
 
-.form{
-
+form {
+	position: relative;
+	/* display: flex; */
+	flex-direction: column;
+	position: relative;
 }
 
-.image{
+.form-container h2 {
+	margin-top: 3rem;
+	font-size: 1.25rem;
+}
 
+.card-title {
+	transition: all 0.3s ease-in;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: 100px auto;
+	grid-template-rows: 1fr 1fr 1fr;
+	gap: 10px;
+	margin: 2rem 1.5rem;
+	text-align: center;
+	align-items: center;
+}
+
+.grid p {
+	font-size: 0.85rem;
+}
+
+.item {
+	display: flex;
+	flex: column;
+}
+
+.num-label {
+	background-color: white;
+	padding: 1rem 0.25rem;
+	width: 70%;
+	border-radius: 10px;
+	margin: auto;
+}
+
+.hidden {
+	display: none;
 }
 
 /* ----------------- Image ----------------- */
-.image img{
-    margin-left: 2rem;
-}
 
 /* ----------------- Buttons ----------------- */
 
-.btn{
-    border-radius: 12px;
-    margin-top: 1rem;
-    font-size: 1.25rem;
+.btn {
+	border-radius: 12px;
+	margin-top: 1rem;
+	font-size: 1.25rem;
 }
 
-
-.btn-primary{
-    background: rgb(38,171,122);
-    background: linear-gradient(90deg, rgba(38,171,122,1) -50%, rgba(242,175,41,1) 120%);
-    /* background-color: var(--primary); */
-    border: none;
-    color: var(--light);
-    padding: 0.45rem 1.5rem;
-    transition: all 0.5s ease;
+.btn-primary {
+	background: rgb(38, 171, 122);
+	background: linear-gradient(
+		90deg,
+		rgba(38, 171, 122, 1) -50%,
+		rgba(242, 175, 41, 1) 120%
+	);
+	/* background-color: var(--primary); */
+	border: none;
+	color: var(--light);
+	padding: 0.45rem 1.5rem;
+	transition: all 0.5s ease;
 }
 
-.btn-primary:hover{
-    transform: scale(1.05);
+.btn-primary:hover {
+	transform: scale(1.05);
+}
+
+.btn-block button {
+	width: 100%;
+	border-radius: 0 0 10px 10px;
+	border: none;
+	padding: 1rem 0;
 }
 
 /* ----------------- Media Queries ----------------- */
 
 @media (max-width: 991px) {
-   
-    .container .row{
-        display: flex;
-    }
+	.container .row {
+		display: flex;
+	}
 
-    .image{
-        order: -1;
-    }
+	.image {
+		order: -1;
+	}
 
-    .image img{
-        padding-bottom: 2rem;
-        margin-left: 0;
-    }
-    
-    .submit-btn {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
+	.image img {
+		padding-bottom: 2rem;
+		margin-left: 0;
+	}
 
+	.submit-btn {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
 
-    section.title h2{
-        font-size: 2rem;
-    }
+	section.title h2 {
+		font-size: 2rem;
+	}
 
-    section.title p{
-        font-size: 1.15rem;
-        width: 500px;
-    }
+	section.title p {
+		font-size: 1.15rem;
+		width: 500px;
+	}
 
-    .btn {
-        font-size: 1.25rem;
-    }
-
+	.btn {
+		font-size: 1.25rem;
+	}
 }
 
 @media (max-width: 500px) {
-    section.title h2{
-        font-size: 1.5rem;
-    }
+	section.title h2 {
+		font-size: 1.5rem;
+	}
 
-    section.title p{
-        font-size: 0.95rem;
-        width: 300px;
-        margin-bottom: -1.5rem;
-    }
-
-   
+	section.title p {
+		font-size: 0.95rem;
+		width: 300px;
+		margin-bottom: -1.5rem;
+	}
 }
