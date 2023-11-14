@@ -58,21 +58,20 @@ body {
 
 /* ----------------- Forms ----------------- */
 
-.main-form {
-	display: flex;
-	gap: 20px;
+.main-container {
 }
 .form-container {
 	width: 340px;
 	height: auto;
-	margin: 2rem auto;
-	background-color: #26ab7a;
+	margin: 5rem auto;
+	background-color: #ffffff;
 	border-radius: 10px;
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	/* justify-content: center; */
 	text-align: center;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 form {
@@ -103,6 +102,8 @@ form {
 
 .grid p {
 	font-size: 0.85rem;
+	align-self: center;
+	margin-top: 1rem;
 }
 
 .item {
@@ -111,11 +112,18 @@ form {
 }
 
 .num-label {
-	background-color: white;
+	color: #ffffff;
 	padding: 1rem 0.25rem;
 	width: 70%;
 	border-radius: 10px;
 	margin: auto;
+	background: rgb(38, 171, 122);
+	background: linear-gradient(
+		90deg,
+		rgba(38, 171, 122, 1) -50%,
+		rgba(242, 175, 41, 1) 120%
+	);
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .hidden {
@@ -155,6 +163,15 @@ form {
 	border-radius: 0 0 10px 10px;
 	border: none;
 	padding: 1rem 0;
+	background: rgb(38, 171, 122);
+	background: linear-gradient(
+		90deg,
+		rgba(38, 171, 122, 1) -50%,
+		rgba(242, 175, 41, 1) 120%
+	);
+	font-size: 1.5em;
+	font-weight: 600;
+	color: #ffffff;
 }
 
 /* ----------------- Media Queries ----------------- */
