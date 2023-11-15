@@ -80,14 +80,16 @@ const updateCalendar = () => {
 
 	let datesHTML = "";
 
-	for (let i = 0; i < firstDayIndex; i++) {
-		datesHTML += `<div class='date inactive'></div>`;
+	for (let i = firstDayIndex; i > 0; i--) {
+		const prevDate = new Date(currentYear, currentMonth, 0 - i + 1);
+		datesHTML += `<div class='date inactive'>${prevDate.getDate()}</div>`;
 	}
 
 	for (let i = 1; i <= totalDays; i++) {
 		const date = new Date(currentYear, currentMonth, i);
+		console.log(date.toDateString());
 		const activeClass =
-			date.toDateString() === new Date().toDateString() ? "active" : "";
+			date.getDate() > new Date().getDate() ? "active" : "inactive";
 		datesHTML += `<div class='date ${activeClass}'>${i}</div>`;
 	}
 
