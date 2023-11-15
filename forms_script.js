@@ -1,60 +1,110 @@
-// const form = document.getElementById('formJS');
+// const monthYearEl = document.querySelector("#monthYear");
+// const datesEl = document.querySelector(".dates");
+// const calPrevBtn = document.querySelector("#calPrevBtn");
+// const calNextBtn = document.querySelector("#calNextBtn");
 
-// form.addEventListener('submit',
-//     function(event){
-//         event.preventDefault();
+// let currentDate = new Date();
 
-//         const firstName = document.getElementById('firstname');
-//         const lastName = document.getElementById('lastname');
-//         const region = document.getElementById('region');
-//         const province = document.getElementById('province');
-//         const barangay = document.getElementById('barangay');
-//         const city = document.getElementById('city');
-//         const postalCode = document.getElementById('postalcode');
-//         const address = document.getElementById('address');
-//         const mobileNo = document.getElementById('mobile');
-//         const email = document.getElementById('email');
-//         const apptType = document.getElementById('appointment');
-//         const date = document.getElementById('date');
-//         const time = document.getElementById('time');
+// const updateCalendar = () => {
+// 	const currentYear = currentDate.getFullYear();
+// 	const currentMonth = currentDate.getMonth();
 
-//         const fnValue = firstName.value;
-//         const lnValue = lastName.value;
-//         const regionValue = region.value;
-//         const provinceValue = province.value;
-//         const barangayValue = barangay.value;
-//         const cityValue = city.value;
-//         const postalCodeValue = postalCode.value;
-//         const addressValue = address.value;
-//         const mobileNoValue = mobileNo.value;
-//         const emailValue = email.value;
-//         const apptTypeValue = apptType.value;
-//         const dateValue = date.value;
-//         const timeValue = time.value;
+// 	const firstDay = new Date(currentYear, currentMonth, 1);
+// 	const lastDay = new Date(currentYear, currentMonth + 1, 0);
+// 	const totalDays = lastDay.getDate();
+// 	const firstDayIndex = firstDay.getDay();
+// 	const lastDayIndex = lastDay.getDay();
 
-//         console.log(fnValue);
-//         console.log(lnValue);
-//         console.log(regionValue);
-//         console.log(provinceValue);
-//         console.log(barangayValue);
-//         console.log(cityValue);
-//         console.log(postalCodeValue);
-//         console.log(addressValue);
-//         console.log(mobileNoValue);
-//         console.log(emailValue);
-//         console.log(apptTypeValue);
-//         console.log(dateValue);
-//         console.log(timeValue);
-//     });
+// 	const monthYearString = currentDate.toLocaleString("default", {
+// 		month: "long",
+// 		year: "numeric",
+// 	});
+// 	monthYearEl.textContent = monthYearString;
 
-const btn = document.querySelector(".start");
-const cardTitle = document.querySelector(".card-title");
+// 	let datesHTML = "";
 
-const slideOne = document.querySelector(".slide-one");
-const slideTwo = document.querySelector(".slide-two");
-btn.addEventListener("click", () => {
-	console.log("clicked");
-	cardTitle.innerText = "";
-	cardTitle.innerText = `Working!`;
-	slideOne.style.display = "none";
+// 	for (let i = firstDayIndex; i > 1; i--) {
+// 		const prevDate = new Date(currentYear, currentMonth, 0 - i + 1);
+// 		datesHTML += `<div class='date inactive'>${prevDate.getDate()}</div>`;
+// 	}
+
+// 	for (let i = 1; i <= totalDays; i++) {
+// 		const date = new Date(currentYear, currentMonth, i);
+// 		const activeClass =
+// 			date.toDateString() === currentDate.toDateString() ? "active" : "";
+// 		datesHTML += `<div class='date ${activeClass}">${i}</div>`;
+// 	}
+
+// 	for (let i = 1; i <= 7 - lastDayIndex; i++) {
+// 		const nextDate = new Date(currentYear, currentMonth + 1, i);
+// 		datesHTML += `<div class="date inactive">${nextDate.getDate()}</div>`;
+// 	}
+
+// 	datesEl.innerHTML = datesHTML;
+// };
+
+// calPrevBtn.addEventListener("click", () => {
+// 	currentDate.setMonth(currentDate.getMonth() - 1);
+// 	updateCalendar();
+// });
+// calNextBtn.addEventListener("click", () => {
+// 	currentDate.setMonth(currentDate.getMonth() + 1);
+// 	updateCalendar();
+// });
+
+// updateCalendar();
+
+const monthYearEl = document.querySelector("#monthYear");
+const datesEl = document.querySelector(".dates");
+const calPrevBtn = document.querySelector("#calPrevBtn");
+const calNextBtn = document.querySelector("#calNextBtn");
+
+let currentDate = new Date();
+
+const updateCalendar = () => {
+	const currentYear = currentDate.getFullYear();
+	const currentMonth = currentDate.getMonth();
+
+	const firstDay = new Date(currentYear, currentMonth, 1);
+	const lastDay = new Date(currentYear, currentMonth + 1, 0);
+	const totalDays = lastDay.getDate();
+	const firstDayIndex = firstDay.getDay();
+	const lastDayIndex = lastDay.getDay();
+	console.log(firstDayIndex);
+
+	const monthYearString = currentDate.toLocaleString("default", {
+		month: "long",
+		year: "numeric",
+	});
+	monthYearEl.textContent = monthYearString;
+
+	let datesHTML = "";
+
+	for (let i = 0; i < firstDayIndex; i++) {
+		datesHTML += `<div class='date inactive'></div>`;
+	}
+
+	for (let i = 1; i <= totalDays; i++) {
+		const date = new Date(currentYear, currentMonth, i);
+		const activeClass =
+			date.toDateString() === new Date().toDateString() ? "active" : "";
+		datesHTML += `<div class='date ${activeClass}'>${i}</div>`;
+	}
+
+	for (let i = lastDayIndex + 1; i < 7; i++) {
+		datesHTML += `<div class="date inactive"></div>`;
+	}
+
+	datesEl.innerHTML = datesHTML;
+};
+
+calPrevBtn.addEventListener("click", () => {
+	currentDate.setMonth(currentDate.getMonth() - 1);
+	updateCalendar();
 });
+calNextBtn.addEventListener("click", () => {
+	currentDate.setMonth(currentDate.getMonth() + 1);
+	updateCalendar();
+});
+
+updateCalendar();

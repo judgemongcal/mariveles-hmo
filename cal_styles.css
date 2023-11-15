@@ -1,0 +1,93 @@
+/* -------------------- Font -------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* -------------------- Brand Colors -------------------- */
+:root {
+	--primary: #f2af29;
+	--secondary: #26ab7a;
+	--black: #242424;
+	--light: #fefefe;
+}
+
+/* -------------------- Body -------------------- */
+body {
+	font-family: "Poppins", sans-serif;
+	background-color: var(--black);
+	color: var(--black);
+	/* background-image: url(assets/mariveles/mariveles_hero_bg.png); */
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.calendar {
+	width: auto;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	background-color: var(--light);
+	border-radius: 10px;
+}
+
+.shadow-1 {
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+}
+
+.header button {
+	padding: 0.5rem 1rem;
+	border: none;
+	border-radius: 5px;
+	background-color: var(--primary);
+}
+
+.days {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 30px;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px;
+	margin-top: 1rem;
+}
+
+.day {
+	text-align: center;
+}
+
+.dates {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 10px;
+	text-align: center;
+}
+
+.date {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 12px;
+	margin-left: auto;
+	cursor: pointer;
+	font-weight: 600;
+	border-radius: 50%;
+	width: 40px;
+	transition: background-color 0.3s ease-in;
+}
+
+.date:hover {
+	background-color: var(--primary);
+}
+
+.inactive {
+	opacity: 50%;
+}
