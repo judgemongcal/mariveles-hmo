@@ -69,6 +69,13 @@ body {
 	grid-template-columns: repeat(7, 1fr);
 	gap: 10px;
 	text-align: center;
+	justify-content: space-around;
+}
+
+.dates button {
+	border: none;
+	background-color: transparent;
+	margin-right: auto;
 }
 
 .date {
