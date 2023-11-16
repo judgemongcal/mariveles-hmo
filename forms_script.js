@@ -88,8 +88,7 @@ const updateCalendar = () => {
 	for (let i = 1; i <= totalDays; i++) {
 		const date = new Date(currentYear, currentMonth, i);
 		console.log(date.toDateString());
-		const activeClass =
-			date.getDate() > new Date().getDate() ? "active" : "inactive";
+		const activeClass = date > new Date() ? "active" : "inactive";
 		datesHTML += `<div class='date ${activeClass}'>${i}</div>`;
 	}
 
