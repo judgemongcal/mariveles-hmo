@@ -2,9 +2,20 @@ const monthYearEl = document.querySelector("#monthYear");
 const datesEl = document.querySelector(".dates");
 const calPrevBtn = document.querySelector("#calPrevBtn");
 const calNextBtn = document.querySelector("#calNextBtn");
+const timeslotDiv = document.querySelector(".time-slots");
 
 let currentDate = new Date();
 let chosenDate;
+let chosenTime;
+const tempTimeSlots = [
+	"8:00 AM",
+	"9:00 AM",
+	"10:00 AM",
+	"11:00 AM",
+	"12:00 PM",
+	"1:00 PM",
+	"2:00 PM",
+];
 
 const updateCalendar = () => {
 	const currentYear = currentDate.getFullYear();
@@ -76,6 +87,35 @@ const getDayVal = (e) => {
 		Number(e.target.innerHTML),
 	);
 	console.log(chosenDate);
+
+	chosenDate && showTime();
+};
+
+const showTime = () => {
+	timeslotDiv.innerHTML = "";
+	tempTimeSlots.map((time, index) => {
+		const container = document.createElement("button");
+		index % 2 == 0
+			? container.classList.add("time", "time-open")
+			: container.classList.add("time", "time-taken");
+		container.innerHTML = time;
+		timeslotDiv.appendChild(container);
+	});
+
+	handleTimeOpen();
+};
+
+const handleTimeOpen = () => {
+	const openTime = document.querySelectorAll(".time-open");
+	openTime.forEach((time) =>
+		time.addEventListener("click", () => getTime(time)),
+	);
+};
+
+const getTime = (option) => {
+	const timeSelected = option.innerHTML;
+	const chosenTime = timeSelected;
+	console.log(chosenTime);
 };
 
 updateCalendar();
