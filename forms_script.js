@@ -3,8 +3,51 @@ const datesEl = document.querySelector(".dates");
 const calPrevBtn = document.querySelector("#calPrevBtn");
 const calNextBtn = document.querySelector("#calNextBtn");
 const timeslotDiv = document.querySelector(".time-slots");
-const buttonDiv = document.querySelector(".btn-blk");
+const buttonDiv = document.querySelector(".cal-btn-blk");
 
+const multiStepForm = document.querySelector("[data-multi-step]");
+const formSteps = [...multiStepForm.querySelectorAll("[data-step]")];
+let currentStep = formSteps.findIndex((step) => {
+	return step.classList.contains("active");
+});
+
+if (currentStep < 0) {
+	currentStep = 0;
+	showCurrentStep();
+}
+
+multiStepForm.addEventListener("click", (e) => {
+	let incrementor;
+	if (e.target.matches("[data-next]")) {
+		incrementor = 1;
+	} else if (e.target.matches("[data-previous]")) {
+		incrementor = -1;
+	}
+
+	if (incrementor == null) return;
+
+	const inputs = [...formSteps[currentStep].querySelectorAll("input")];
+	const allValid = inputs.every((input) => input.reportValidity());
+	if (allValid) {
+		currentStep += incrementor;
+		showCurrentStep();
+	}
+});
+
+formSteps.forEach((step) => {
+	step.addEventListener("animationend", (e) => {
+		formSteps[currentStep].classList.remove("hide");
+		e.target.classList.toggle("hide", !e.target.classList.contains("active"));
+	});
+});
+
+function showCurrentStep() {
+	formSteps.forEach((step, index) => {
+		step.classList.toggle("active", index === currentStep);
+	});
+}
+
+// CALENDAR
 let currentDate = new Date();
 let chosenDate;
 let chosenTime;
@@ -77,6 +120,7 @@ const getActiveDates = () => {
 };
 
 const getDayVal = (e) => {
+	e.preventDefault();
 	console.log(
 		`Selected Month is: ${currentDate.getMonth()} Selected Day is: ${
 			e.target.innerHTML
@@ -89,13 +133,14 @@ const getDayVal = (e) => {
 	);
 	console.log(chosenDate);
 
-	chosenDate && showTime();
+	chosenDate && showTime(e);
 };
 
-const showTime = () => {
+const showTime = (e) => {
+	e.preventDefault();
 	timeslotDiv.innerHTML = "";
 	tempTimeSlots.map((time, index) => {
-		const container = document.createElement("button");
+		const container = document.createElement("div");
 		index % 2 == 0
 			? container.classList.add("time", "time-open")
 			: container.classList.add("time", "time-taken");
@@ -103,17 +148,19 @@ const showTime = () => {
 		timeslotDiv.appendChild(container);
 	});
 
-	handleTimeOpen();
+	handleTimeOpen(e);
 };
 
-const handleTimeOpen = () => {
+const handleTimeOpen = (e) => {
+	e.preventDefault();
 	const openTime = document.querySelectorAll(".time-open");
 	openTime.forEach((time) =>
-		time.addEventListener("click", () => getTime(time)),
+		time.addEventListener("click", () => getTime(time, e)),
 	);
 };
 
-const getTime = (option) => {
+const getTime = (option, e) => {
+	e.preventDefault();
 	const timeSelected = option.innerHTML;
 	const chosenTime = timeSelected;
 	console.log(chosenTime);
