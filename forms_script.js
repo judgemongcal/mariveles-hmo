@@ -1,10 +1,14 @@
 const monthYearEl = document.querySelector("#monthYear");
 const datesEl = document.querySelector(".dates");
-const calPrevBtn = document.querySelector("#calPrevBtn");
-const calNextBtn = document.querySelector("#calNextBtn");
+const calPrevBtn = document.querySelector("#cal-prev-btn");
+const calNextBtn = document.querySelector("#cal-submit-btn");
 const timeslotDiv = document.querySelector(".time-slots");
 const buttonDiv = document.querySelector(".cal-btn-blk");
+const form = document.querySelector(".multi-step-form");
 
+const slide2NextBtn = document.querySelector(".next-slide-2");
+
+// CARD SLIDER
 const multiStepForm = document.querySelector("[data-multi-step]");
 const formSteps = [...multiStepForm.querySelectorAll("[data-step]")];
 let currentStep = formSteps.findIndex((step) => {
@@ -113,7 +117,7 @@ calNextBtn.addEventListener("click", () => {
 });
 
 const getActiveDates = () => {
-	const activeDates = document.querySelectorAll(".active");
+	const activeDates = document.querySelectorAll(".date");
 	activeDates.forEach((date) =>
 		date.addEventListener("click", (e) => getDayVal(e)),
 	);
@@ -155,12 +159,11 @@ const handleTimeOpen = (e) => {
 	e.preventDefault();
 	const openTime = document.querySelectorAll(".time-open");
 	openTime.forEach((time) =>
-		time.addEventListener("click", () => getTime(time, e)),
+		time.addEventListener("click", () => getTime(time)),
 	);
 };
 
-const getTime = (option, e) => {
-	e.preventDefault();
+const getTime = (option) => {
 	const timeSelected = option.innerHTML;
 	const chosenTime = timeSelected;
 	console.log(chosenTime);
@@ -171,5 +174,17 @@ const getTime = (option, e) => {
 const showSubmitBtn = () => {
 	buttonDiv.style.display = "flex";
 };
+
+// USER DATA FETCHING
+
+form.addEventListener("submit", (e) => {
+	e.preventDefault();
+	const firstName = document.querySelector("#first_name").value;
+	const lastName = document.querySelector("#last_name").value;
+	const email = document.querySelector("#last_name").value;
+	const phoneNum = document.querySelector("#p_number").value;
+	const appointment = document.querySelector("#appt").value;
+	console.log(firstName, lastName, email, phoneNum, appointment);
+});
 
 updateCalendar();

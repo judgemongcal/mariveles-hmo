@@ -134,7 +134,7 @@ body {
 	cursor: not-allowed;
 }
 
-.btn-blk {
+.cal-btn-blk {
 	display: none;
 	flex-direction: row;
 	justify-content: center;
@@ -142,7 +142,7 @@ body {
 	gap: 12px;
 }
 
-.btn-blk button {
+.cal-btn-blk button {
 	width: 100%;
 	border-radius: 10px;
 	border: none;
