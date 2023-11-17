@@ -133,3 +133,37 @@ body {
 	opacity: 30%;
 	cursor: not-allowed;
 }
+
+.btn-blk {
+	display: none;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 3rem;
+	gap: 12px;
+}
+
+.btn-blk button {
+	width: 100%;
+	border-radius: 10px;
+	border: none;
+	padding: 0.75rem;
+	font-size: 1.25em;
+	font-weight: 600;
+	color: #ffffff;
+}
+
+.prev-btn {
+	background-color: var(--black);
+}
+
+.next-btn {
+	background-color: var(--primary);
+}
+
+.submit-btn {
+	background: linear-gradient(
+		90deg,
+		rgba(38, 171, 122, 1) -50%,
+		rgba(242, 175, 41, 1) 120%
+	);
+}

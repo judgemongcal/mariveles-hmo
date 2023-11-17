@@ -3,6 +3,7 @@ const datesEl = document.querySelector(".dates");
 const calPrevBtn = document.querySelector("#calPrevBtn");
 const calNextBtn = document.querySelector("#calNextBtn");
 const timeslotDiv = document.querySelector(".time-slots");
+const buttonDiv = document.querySelector(".btn-blk");
 
 let currentDate = new Date();
 let chosenDate;
@@ -116,6 +117,12 @@ const getTime = (option) => {
 	const timeSelected = option.innerHTML;
 	const chosenTime = timeSelected;
 	console.log(chosenTime);
+
+	chosenTime && showSubmitBtn();
+};
+
+const showSubmitBtn = () => {
+	buttonDiv.style.display = "flex";
 };
 
 updateCalendar();
