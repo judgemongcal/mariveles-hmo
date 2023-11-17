@@ -5,6 +5,8 @@
 :root {
 	--primary: #f2af29;
 	--secondary: #26ab7a;
+	--secondary2: #35c28e;
+	--invalid: #363636;
 	--black: #242424;
 	--light: #fefefe;
 }
@@ -101,5 +103,32 @@ body {
 
 .inactive {
 	opacity: 50%;
+	cursor: not-allowed;
+}
+
+.time-slots {
+	margin: 2rem 1rem;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 15px;
+	text-align: center;
+}
+
+.time {
+	border-radius: 10px;
+	padding: 0.35rem;
+	font-size: 1.05rem;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	color: var(--light);
+}
+
+.time-open {
+	background-color: var(--secondary);
+	cursor: pointer;
+}
+
+.time-taken {
+	background-color: var(--invalid);
+	opacity: 30%;
 	cursor: not-allowed;
 }
