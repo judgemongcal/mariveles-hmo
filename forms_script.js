@@ -4,6 +4,7 @@ const timeslotDiv = document.querySelector(".time-slots");
 const buttonDiv = document.querySelector(".cal-btn-blk");
 const form = document.querySelector(".multi-step-form");
 const confirmModal = document.querySelector(".modal");
+const exitModal = document.querySelector(".exit-modal");
 const months = [
 	"January",
 	"February",
@@ -21,6 +22,7 @@ const months = [
 let calPrevBtn = document.querySelector("#calPrevBtn");
 let calNextBtn = document.querySelector("#calNextBtn");
 let chosenDay, chosenTime;
+let activeDates;
 
 const slide2NextBtn = document.querySelector(".next-slide-2");
 
@@ -133,14 +135,19 @@ calNextBtn.addEventListener("click", () => {
 });
 
 const getActiveDates = () => {
-	const activeDates = document.querySelectorAll(".date");
+	activeDates = document.querySelectorAll(".date");
 	activeDates.forEach((date) =>
-		date.addEventListener("click", (e) => getDayVal(e)),
+		date.addEventListener("click", (e) => getDayVal(date, e)),
 	);
 };
 
-const getDayVal = (e) => {
-	e.preventDefault();
+const getDayVal = (date, e) => {
+	// e.preventDefault();
+	activeDates.forEach((activeDate) => {
+		activeDate.style.backgroundColor = "";
+	});
+
+	date.style.backgroundColor = "var(--primary)";
 	console.log(
 		`Selected Month is: ${currentDate.getMonth()} Selected Day is: ${
 			e.target.innerHTML
@@ -232,15 +239,54 @@ const showModal = (appointment) => {
 			id="modal-prev-btn"
 			data-previous
 		>
-			Previous
+			Back
 		</button>
-		<button type="submit" class="submit-btn" id="modal-submit-btn">
+		<button type="button" class="submit-btn" id="modal-submit-btn">
 			Submit
 		</button>
 	</div>
 	`;
 	confirmModal.appendChild(div);
 	confirmModal.style.display = "flex";
+
+	confirmModal
+		.querySelector("#modal-prev-btn")
+		.addEventListener("click", hideModal);
+
+	confirmModal
+		.querySelector("#modal-submit-btn")
+		.addEventListener("click", showConfirm);
+};
+
+const hideModal = () => {
+	confirmModal.style.display = "none";
+};
+
+const showConfirm = () => {
+	// e.preventDefault();
+
+	confirmModal.style.display = "none";
+	const div = document.createElement("div");
+	div.classList.add("modal-card", "shadow-1");
+	div.innerHTML = `
+	<h2>Your appointment has been scheduled!</h2>
+	
+	<h3>Please check your email for the confirmation and for other updates.<br>See you soon!</h3>
+	<div class="modal-btn-blk">
+		<button type="button" class="submit-btn" id="modal-finish-btn">
+			Finish
+		</button>
+	</div>
+	`;
+	exitModal.appendChild(div);
+	exitModal.style.display = "flex";
+
+	const finishBtn = exitModal.querySelector("#modal-finish-btn");
+	finishBtn.addEventListener("click", exitPage);
+};
+
+const exitPage = () => {
+	window.location.href = "http://127.0.0.1:5500/index.html";
 };
 
 updateCalendar();

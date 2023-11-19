@@ -305,7 +305,8 @@ button {
 	transition: background-color 0.3s ease-in;
 }
 
-.date:hover {
+.date:hover,
+.date:active {
 	background-color: var(--primary);
 }
 
@@ -337,7 +338,8 @@ button {
 	transition: background-color 0.3s ease;
 }
 
-.time-open:hover {
+.time-open:hover,
+time-open:active {
 	background-color: #1e855f;
 }
 
@@ -367,7 +369,8 @@ button {
 
 /* MODAL */
 
-.modal {
+.modal,
+.exit-modal {
 	position: fixed;
 	height: 100%;
 	width: 100%;
@@ -381,6 +384,16 @@ button {
 	align-items: center;
 }
 
+.exit-modal h2 {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.exit-modal h3 {
+	margin-bottom: 1rem;
+	font-weight: 400;
+	font-size: 1rem;
+}
 .modal-card {
 	padding: 2rem;
 	width: 325px;
