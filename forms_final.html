@@ -73,7 +73,9 @@
 					<input type="password" name="password" id="password" />
 				</div>
 				<button type="button" data-next>Next</button> -->
-				<h3 class="step-title"><span id="gradient-text">Step 1</span> of 3</h3>
+				<h3 class="step-title">
+					<span class="gradient-text">Step 1</span> of 3
+				</h3>
 				<h3 class="step-title">
 					A few reminders before you schedule your appointment:
 				</h3>
@@ -223,6 +225,32 @@
 				</div>
 			</div>
 		</form>
+
+		<div class="modal">
+			<div class="modal-card shadow-1">
+				<h2>You are about to schedule your appointment.</h2>
+				<div class="appt-details">
+					<p class="gradient-text"><strong>Scheduled Date</strong></p>
+					<p>November 20, 2023</p>
+					<p class="gradient-text"><strong>Scheduled Time</strong></p>
+					<p>10:00 AM</p>
+				</div>
+				<h3>Would you like to proceed?</h3>
+				<div class="modal-btn-blk">
+					<button
+						type="button"
+						class="prev-btn"
+						id="cal-prev-btn"
+						data-previous
+					>
+						Previous
+					</button>
+					<button type="submit" class="submit-btn" id="cal-submit-btn">
+						Submit
+					</button>
+				</div>
+			</div>
+		</div>
 
 		<!-- Scripts -->
 		<script src="forms_script.js" defer></script>

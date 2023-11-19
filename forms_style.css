@@ -219,7 +219,7 @@ button {
 	font-size: 0.75rem;
 }
 
-#gradient-text {
+.gradient-text {
 	background: #26ab7a;
 	background: linear-gradient(to right, #26ab7a 0%, #f2af29 100%);
 	-webkit-background-clip: text;
@@ -365,6 +365,68 @@ button {
 	color: #ffffff;
 }
 
+/* MODAL */
+
+.modal {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgb(0, 0, 0, 0.7);
+	display: block;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-card {
+	padding: 2rem;
+	width: 325px;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: var(--light);
+	text-align: center;
+	border-radius: 10px;
+	font-weight: 400;
+	font-size: 0.75rem;
+}
+
+.appt-details {
+	margin: 2rem auto;
+	font-size: 1.25rem;
+	font-weight: 400;
+	gap: 0;
+	display: grid;
+	grid-template-columns: 1;
+	justify-content: space-around;
+}
+
+.appt-details .gradient-text {
+	margin-bottom: -0.25rem;
+}
+
+.modal-btn-blk {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 3rem;
+	gap: 12px;
+}
+
+.modal-btn-blk button {
+	width: 100%;
+	border-radius: 10px;
+	border: none;
+	padding: 0.75rem;
+	font-size: 1.25em;
+	font-weight: 600;
+	color: #ffffff;
+}
+
 @media screen and (min-width: 600px) and (max-width: 999px) {
 	#navbar {
 		margin: 2rem 5rem auto 5rem;
@@ -397,6 +459,10 @@ button {
 
 	.time-slots {
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.modal-card {
+		width: 400px;
 	}
 }
 
@@ -447,5 +513,20 @@ button {
 
 	.time-slots {
 		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.modal-card {
+		width: 600px;
+		padding-top: 3rem;
+	}
+
+	.appt-details {
+		margin: 2rem auto;
+		font-size: 1.25rem;
+		font-weight: 400;
+		gap: 10px;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		justify-content: space-around;
 	}
 }
