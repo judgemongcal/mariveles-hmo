@@ -1,10 +1,26 @@
 const monthYearEl = document.querySelector("#monthYear");
 const datesEl = document.querySelector(".dates");
-let calPrevBtn = document.querySelector("#calPrevBtn");
-let calNextBtn = document.querySelector("#calNextBtn");
 const timeslotDiv = document.querySelector(".time-slots");
 const buttonDiv = document.querySelector(".cal-btn-blk");
 const form = document.querySelector(".multi-step-form");
+const confirmModal = document.querySelector(".modal");
+const months = [
+	"January",
+	"February",
+	"March",
+	"April",
+	"May",
+	"June",
+	"July",
+	"August",
+	"September",
+	"October",
+	"November",
+	"December",
+];
+let calPrevBtn = document.querySelector("#calPrevBtn");
+let calNextBtn = document.querySelector("#calNextBtn");
+let chosenDay, chosenTime;
 
 const slide2NextBtn = document.querySelector(".next-slide-2");
 
@@ -54,7 +70,6 @@ function showCurrentStep() {
 // CALENDAR
 let currentDate = new Date();
 let chosenDate;
-let chosenTime;
 const tempTimeSlots = [
 	"8:00 AM",
 	"9:00 AM",
@@ -131,6 +146,7 @@ const getDayVal = (e) => {
 			e.target.innerHTML
 		} Selected Year is : ${currentDate.getFullYear()}`,
 	);
+	chosenDay = Number(e.target.innerHTML);
 	chosenDate = new Date(
 		currentDate.getFullYear(),
 		currentDate.getMonth(),
@@ -166,7 +182,7 @@ const handleTimeOpen = (e) => {
 
 const getTime = (option) => {
 	const timeSelected = option.innerHTML;
-	const chosenTime = timeSelected;
+	chosenTime = timeSelected;
 	console.log(chosenTime);
 
 	chosenTime && showSubmitBtn();
@@ -186,6 +202,45 @@ form.addEventListener("submit", (e) => {
 	const phoneNum = document.querySelector("#p_number").value;
 	const appointment = document.querySelector("#appt").value;
 	console.log(firstName, lastName, email, phoneNum, appointment);
+
+	showModal(appointment);
 });
+
+// MODAL
+
+const showModal = (appointment) => {
+	confirmModal.innerHTML = "";
+	const div = document.createElement("div");
+	div.classList.add("modal-card", "shadow-1");
+	div.innerHTML = `
+	<h2>You are about to schedule your appointment.</h2>
+	<div class="appt-details">
+		<p class="gradient-text"><strong>Scheduled Date</strong></p>
+		<p>${
+			months[chosenDate.getMonth()]
+		} ${chosenDay}, ${chosenDate.getFullYear()}</p>
+		<p class="gradient-text"><strong>Scheduled Time</strong></p>
+		<p>${chosenTime}</p>
+		<p class="gradient-text"><strong>Appointment Type</strong></p>
+		<p>${appointment}</p>
+	</div>
+	<h3>Would you like to proceed?</h3>
+	<div class="modal-btn-blk">
+		<button
+			type="button"
+			class="prev-btn"
+			id="modal-prev-btn"
+			data-previous
+		>
+			Previous
+		</button>
+		<button type="submit" class="submit-btn" id="modal-submit-btn">
+			Submit
+		</button>
+	</div>
+	`;
+	confirmModal.appendChild(div);
+	confirmModal.style.display = "flex";
+};
 
 updateCalendar();

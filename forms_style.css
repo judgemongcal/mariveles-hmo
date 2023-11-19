@@ -376,7 +376,7 @@ button {
 	background-color: rgb(0, 0, 0, 0.7);
 	display: block;
 	z-index: 1;
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 }
