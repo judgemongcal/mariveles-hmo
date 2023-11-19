@@ -22,6 +22,10 @@ body {
 	justify-content: center;
 }
 
+.text-header {
+	margin: auto 1rem;
+}
+
 .card {
 	background-color: white;
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -224,13 +228,12 @@ button {
 /* CALENDAR */
 
 .calendar {
-	background-color: red;
 	width: 300px;
 	height: auto;
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
-	/* background-color: var(--light); */
+	background-color: var(--light);
 	border-radius: 10px;
 	margin-top: 1rem;
 	margin-left: -1.15rem;
@@ -256,7 +259,6 @@ button {
 }
 
 .days {
-	background-color: blue;
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
 	gap: 10px;
@@ -271,7 +273,6 @@ button {
 }
 
 .dates {
-	background-color: green;
 	display: grid;
 	grid-template-columns: repeat(7, 10px);
 	gap: 5px;
@@ -356,4 +357,36 @@ button {
 	font-size: 1.25em;
 	font-weight: 600;
 	color: #ffffff;
+}
+
+@media screen and (min-width: 600px) and (max-width: 999px) {
+	.text-header {
+		margin: auto 5rem;
+	}
+
+	.card {
+		box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+		width: 500px;
+	}
+
+	.calendar {
+		width: 440px;
+		padding: 10px;
+		margin-left: -0.25rem;
+	}
+
+	.days {
+		grid-template-columns: repeat(7, 1fr);
+		gap: 10px;
+	}
+
+	.dates {
+		grid-template-columns: repeat(7, 10px);
+		gap: 10px;
+		margin-left: -1.55rem;
+	}
+
+	.time-slots {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }

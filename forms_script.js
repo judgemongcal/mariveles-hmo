@@ -1,7 +1,7 @@
 const monthYearEl = document.querySelector("#monthYear");
 const datesEl = document.querySelector(".dates");
-const calPrevBtn = document.querySelector("#cal-prev-btn");
-const calNextBtn = document.querySelector("#cal-submit-btn");
+let calPrevBtn = document.querySelector("#calPrevBtn");
+let calNextBtn = document.querySelector("#calNextBtn");
 const timeslotDiv = document.querySelector(".time-slots");
 const buttonDiv = document.querySelector(".cal-btn-blk");
 const form = document.querySelector(".multi-step-form");
@@ -111,6 +111,7 @@ calPrevBtn.addEventListener("click", () => {
 	currentDate.setMonth(currentDate.getMonth() - 1);
 	updateCalendar();
 });
+
 calNextBtn.addEventListener("click", () => {
 	currentDate.setMonth(currentDate.getMonth() + 1);
 	updateCalendar();
