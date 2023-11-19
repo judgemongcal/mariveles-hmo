@@ -17,7 +17,7 @@ body {
 	color: var(--black);
 	/* background-image: url(assets/mariveles/mariveles_hero_bg.png); */
 	display: flex;
-	/* margin: 1.5rem; */
+	margin: 1.5rem;
 	flex-direction: column;
 	justify-content: center;
 }
@@ -27,7 +27,7 @@ body {
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 	border-radius: 10px;
 	padding: 2rem;
-	width: 500px;
+	width: 330px;
 	margin: 3rem auto;
 	animation: fade 250ms ease-in-out forwards;
 }
@@ -201,7 +201,7 @@ button {
 .form-group input,
 .form-group select {
 	padding: 0.75rem;
-	background-color: var(--light);
+	background-color: #e4e4e4;
 	border: none;
 	border-radius: 10px;
 	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -224,14 +224,16 @@ button {
 /* CALENDAR */
 
 .calendar {
-	width: auto;
+	background-color: red;
+	width: 300px;
 	height: auto;
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
-	background-color: var(--light);
+	/* background-color: var(--light); */
 	border-radius: 10px;
 	margin-top: 1rem;
+	margin-left: -1.15rem;
 }
 
 .shadow-1 {
@@ -254,9 +256,10 @@ button {
 }
 
 .days {
+	background-color: blue;
 	display: grid;
 	grid-template-columns: repeat(7, 1fr);
-	gap: 30px;
+	gap: 10px;
 	justify-content: space-between;
 	align-items: center;
 	padding: 10px;
@@ -268,11 +271,13 @@ button {
 }
 
 .dates {
+	background-color: green;
 	display: grid;
-	grid-template-columns: repeat(7, 1fr);
-	gap: 10px;
+	grid-template-columns: repeat(7, 10px);
+	gap: 5px;
 	text-align: center;
-	justify-content: space-around;
+	justify-content: space-evenly;
+	margin-left: -1.25rem;
 }
 
 .dates button {
@@ -310,7 +315,7 @@ button {
 .time-slots {
 	margin: 2rem 1rem;
 	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(2, 1fr);
 	gap: 15px;
 	text-align: center;
 }
