@@ -15,6 +15,10 @@ body{
     background-color: var(--light);
     color: var(--black);
     background-image: url(assets/mariveles/mariveles_hero_bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
 }
 
 /* -------------------- Buttons -------------------- */
@@ -136,7 +140,7 @@ body{
 /* -------------------- News & Updates -------------------- */
 
 .updates{
-    padding: 8rem 0 5rem 0;
+    padding: 7rem 0 5rem 0;
 }
 
 .text-header h2{
@@ -194,24 +198,31 @@ body{
     padding: 7rem 0 5rem 0; 
 }
 
-#service-title{
-    padding: 6rem 0 1rem 0;
+#title{
+    margin-bottom: 4rem;
 }
 
-
-#s-pic{
-    margin: 3rem 0 2rem 0;
+.accordion{
+    --bs-accordion-bg: 	#FFC107;
+    --bs-accordion-btn-bg: 	#FFC107;
+    --bs-accordion-btn-color: black;
+    --bs-accordion-active-bg:  #198754;
+    --bs-accordion-active-color: white;
+    
+  
+    
 }
-
 /* -------------------- About Us -------------------- */
 
 .aboutus{
-    padding: 5rem 0 5rem 0;
+    padding: 7rem 0 5rem 0;
     
 }
 
+
 #au-row{
     padding: 5rem;
+    
 }
 
 #au-title{
