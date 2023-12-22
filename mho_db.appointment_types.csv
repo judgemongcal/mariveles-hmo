@@ -1,0 +1,27 @@
+_id,appointment_type,description
+6575a5bfa3a0a0de6687005b,Medical Consultation (Non-Emergency) and Treatment,General consultation for non-emergency medical issues and subsequent treatment if needed.
+6575a5bfa3a0a0de6687005c,Paramedics,Emergency medical services provided by trained paramedics.
+6575a5bfa3a0a0de6687005d,Dental Checkup,Routine examination and assessment of dental health.
+6575a5bfa3a0a0de6687005e,Maternal Health and Child Care Services,Specialized care for expectant mothers and child health services.
+6575a5bfa3a0a0de6687005f,Well Baby Clinic,Checkup and care specifically designed for infants and young children.
+6575a5bfa3a0a0de66870060,Expanded Program on Immunization,Vaccination services as per the expanded immunization program.
+6575a5bfa3a0a0de66870061,Hematology,Diagnosis and treatment related to blood disorders.
+6575a5bfa3a0a0de66870062,Clinical Microscopy,Microscopic examination of clinical specimens for diagnostic purposes.
+6575a5bfa3a0a0de66870063,Blood Chemistry,Analysis of blood components for diagnostic and health assessment.
+6575a5bfa3a0a0de66870064,Ultrasonography,Diagnostic imaging technique using ultrasound for internal body visualization.
+6575a5bfa3a0a0de66870065,Radiology (X-ray),X-ray imaging for diagnostic purposes.
+6575a5bfa3a0a0de66870066,ECG,Electrocardiogram for assessing heart health and function.
+6575a5bfa3a0a0de66870067,Sputum Microscopy,Microscopic examination of sputum samples for respiratory health assessment.
+6575a5bfa3a0a0de66870068,Physical Therapy,Rehabilitation and treatment through physical exercises and interventions.
+6575a5bfa3a0a0de66870069,Occupational Therapy,Therapeutic interventions to improve daily functioning and occupation-related skills.
+6575a5bfa3a0a0de6687006a,Speech Therapy,Treatment to improve speech and communication skills.
+6575a5bfa3a0a0de6687006b,Child Psychological Evaluation,Assessment of psychological well-being and development in children.
+6575a5bfa3a0a0de6687006c,Rehabilitation Consultation,Consultation for individuals undergoing rehabilitation for various health conditions.
+6575a5bfa3a0a0de6687006d,Inspection of Establishments,Assessment and inspection of various establishments for compliance with health standards.
+6575a5bfa3a0a0de6687006e,Issuance of Sanitary Permits,Granting permits based on sanitary and health standards adherence.
+6575a5bfa3a0a0de6687006f,Water Testing for Water Refilling Stations,Evaluation of water quality for water refilling stations.
+6575a5bfa3a0a0de66870070,Water Testing for Other Establishments,Assessment of water quality for other types of establishments.
+6575a5bfa3a0a0de66870071,Vector Surveillance,"Monitoring and control of disease vectors (e.g., mosquitoes) for public health."
+6575a5bfa3a0a0de66870072,Fogging/Residual Spraying,Application of insecticides to control disease vectors through fogging or residual spraying.
+6575a5bfa3a0a0de66870073,Salt Testing,Assessment of salt quality for health and safety standards.
+6575a5bfa3a0a0de66870074,Disposal of Medical Wastes and Hazardous Materials,Safe and proper disposal of medical wastes and hazardous materials.

@@ -18,7 +18,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+    animation: transitionIn 1.5s;
 }
 
 /* -------------------- Buttons -------------------- */
@@ -277,11 +277,24 @@ body{
 
 .footer-social{
     line-height: 2.5rem;
-    margin-top: 0.65rem;
+    margin-top: -1.5rem;
 }
 
 .footer .copyright{
     margin-top: 4rem;
+}
+
+/* -------------------- Key Frames ----------------------- */
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 2;
+        transform: translateY(0);
+    }
 }
 
 /* -------------------- Media Queries -------------------- */

@@ -20,6 +20,7 @@ body {
 	margin: 1.5rem;
 	flex-direction: column;
 	justify-content: center;
+	animation: transitionIn 0.75s;
 }
 
 .text-header {
@@ -176,6 +177,13 @@ button {
 	font-size: 1.25em;
 	font-weight: 600;
 	color: #ffffff;
+}
+
+/* Add this style to your CSS */
+.time-clicked {
+    background-color: black;
+    color: yellow; /* Optional: Change the text color if needed */
+    transition: background-color 0.3s ease; /* Adjust the transition duration and timing function as needed */
 }
 
 .prev-btn {
@@ -408,6 +416,25 @@ time-open:active {
 	font-size: 0.75rem;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
 .appt-details {
 	margin: 2rem auto;
 	font-size: 1.25rem;
@@ -478,6 +505,18 @@ time-open:active {
 		width: 400px;
 	}
 }
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 2;
+        transform: translateY(0);
+    }
+}
+
 
 @media screen and (min-width: 1000px) {
 	.instructions {

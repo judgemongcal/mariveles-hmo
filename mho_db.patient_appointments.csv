@@ -1,0 +1,3 @@
+_id,fname,lname,email,phoneNum,appointmentType,date,time,__v
+65772cdbbeea2da0880a4e11,George,Sebastian,georgeconstante.sebastian.cics@ust.edu.ph,09566292335,Well Baby Clinic,2023-12-13T16:00:00.000Z,9:00 AM,0
+65794ffa7aded75acb8fc36b,George Constante,Sebastian,georgeconstante.sebastian.cics@ust.edu.ph,09566292335,Paramedics,2023-12-14T16:00:00.000Z,9:00 AM,0
